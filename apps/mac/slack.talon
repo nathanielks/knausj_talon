@@ -7,7 +7,7 @@ previous workspace: key(cmd-shift-[)
 next workspace: key(cmd-shift-])
 # Channel
 channel: key(cmd-k)
-channel <phrase>: 
+channel <phrase>:
     key(cmd-k)
     dictate.lower(phrase)
 ([channel] unread last | gopreev): key(alt-shift-up)
@@ -35,10 +35,10 @@ channel down: key(alt-down)
 grab left: key(shift-up)
 grab right: key(shift-down)
 add line: key(shift-enter)
-(slack | lack) (slap | slaw | slapper): key(cmd-right shift-enter) 
+(slack | lack) (slap | slaw | slapper): key(cmd-right shift-enter)
 (slack | lack) (react | reaction): key(cmd-shift-\\)
 (insert command | commandify): key(cmd-shift-c)
-insert code: 
+insert code:
     insert("``````")
     key(left left left)
     key(shift-enter)

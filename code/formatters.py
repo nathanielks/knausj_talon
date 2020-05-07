@@ -28,7 +28,7 @@ def FormatText(m, fmtrs):
         words = s.get().split(" ")
         if not words:
             return
-    
+
     return format_text_helper(words, fmtrs)
 
 def format_text_helper(words, fmtrs):
@@ -116,9 +116,6 @@ formatters_words = {
     "slasher": formatters_dict["SLASH_SEPARATED"],
     "sentence": formatters_dict["CAPITALIZE_FIRST_WORD"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
-    "tree": formatters_dict["FIRST_THREE"],
-    "quad": formatters_dict["FIRST_FOUR"],
-    "fiver": formatters_dict["FIRST_FIVE"],
 }
 
 all_formatters = {}
@@ -148,13 +145,15 @@ class Actions:
             return format_text_helper(text, fmtrs)
         else:
             return format_text_helper([text], fmtrs)
-        
+
 @ctx.capture(rule='{self.formatters}+')
 def formatters(m):
     return m.formatters_list
- 
+
 @ctx.capture(rule='<self.formatters> <phrase>')
 def format_text(m):
+    print([m])
+    print(type(m))
     return FormatText(m.phrase, m.formatters)
 
 ctx.lists['self.formatters'] = formatters_words.keys()

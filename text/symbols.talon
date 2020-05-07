@@ -17,7 +17,7 @@ caret: "^"
 at sign: "@"
 (and sign | ampersand ): "&"
 pipe: "|"
-(dubquote | double quote): '"'
+(dubquote | double quote | bunny ears): '"'
 triple quote: "'''"
 (dot dot | dotdot): ".."
 ellipses: "…"
